@@ -13,6 +13,8 @@ final class AppCoordinator: Coordinator {
     func start() {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         guard let viewController = storyboard.instantiateInitialViewController() as? MainViewController else { return }
+        viewController.viewModel = MainViewModel()
+        viewController.title = "Genrenator"
         navigationController?.pushViewController(viewController, animated: false)
     }
 }
