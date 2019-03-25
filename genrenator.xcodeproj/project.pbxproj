@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D256A207222D709C00299F92 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256A206222D709C00299F92 /* MainViewModel.swift */; };
-		D256A20A222D87DF00299F92 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256A209222D87DF00299F92 /* Protocols.swift */; };
+		D256A20A222D87DF00299F92 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256A209222D87DF00299F92 /* ViewModelType.swift */; };
 		D2A472BB222D6AB800934982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A472BA222D6AB800934982 /* AppDelegate.swift */; };
 		D2A472BD222D6AB800934982 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A472BC222D6AB800934982 /* MainViewController.swift */; };
 		D2A472C0222D6AB800934982 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A472BE222D6AB800934982 /* Main.storyboard */; };
@@ -24,7 +24,7 @@
 		3AA3F9103FF152FA2A68E5B3 /* Pods-genrenator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-genrenator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-genrenator/Pods-genrenator.debug.xcconfig"; sourceTree = "<group>"; };
 		754748F7B1B851F24916D8B9 /* Pods_genrenator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_genrenator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D256A206222D709C00299F92 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		D256A209222D87DF00299F92 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		D256A209222D87DF00299F92 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		D2A472B7222D6AB700934982 /* genrenator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = genrenator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A472BA222D6AB800934982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2A472BC222D6AB800934982 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 		D2A472CE222D6B6100934982 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				D256A209222D87DF00299F92 /* Protocols.swift */,
+				D256A209222D87DF00299F92 /* ViewModelType.swift */,
 				D2A472C3222D6AB900934982 /* LaunchScreen.storyboard */,
 				D2A472C6222D6AB900934982 /* Info.plist */,
 				D2A472C1222D6AB900934982 /* Assets.xcassets */,
@@ -251,7 +251,7 @@
 				D256A207222D709C00299F92 /* MainViewModel.swift in Sources */,
 				D2A472D2222D6C3400934982 /* AppCoordinator.swift in Sources */,
 				D2A472BD222D6AB800934982 /* MainViewController.swift in Sources */,
-				D256A20A222D87DF00299F92 /* Protocols.swift in Sources */,
+				D256A20A222D87DF00299F92 /* ViewModelType.swift in Sources */,
 				D2A472BB222D6AB800934982 /* AppDelegate.swift in Sources */,
 				D2A472D0222D6BF100934982 /* Coordinator.swift in Sources */,
 			);

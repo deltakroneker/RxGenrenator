@@ -30,6 +30,7 @@ class MainViewModel: ViewModelType {
             }
             .map { String(data: $0, encoding: .utf8) ?? "" }
             .map { String($0.dropFirst().dropLast()) }
+            .startWith("")
             .asDriver(onErrorRecover: { _ in fatalError() })
         
         return Output(randomGenreText: randomGenreText)

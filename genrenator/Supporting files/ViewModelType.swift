@@ -1,5 +1,5 @@
 //
-//  Protocols.swift
+//  ViewModelType.swift
 //  genrenator
 //
 //  Created by Nikola Milic on 3/4/19.

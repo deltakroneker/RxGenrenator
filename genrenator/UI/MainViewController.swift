@@ -28,7 +28,6 @@ class MainViewController: UIViewController {
         let output = viewModel.transform(input: input)
         
         output.randomGenreText
-            .startWith("")
             .drive(genreLabel.rx.text)
             .disposed(by: bag)
     }
