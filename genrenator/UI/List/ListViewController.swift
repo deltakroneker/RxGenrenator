@@ -35,7 +35,7 @@ class ListViewController: UIViewController, Storyboarded {
     }
     
     func setupBindings() {
-        viewModel.getData()
+        viewModel.allGenres
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: bag)
     }

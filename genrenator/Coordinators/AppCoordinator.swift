@@ -29,9 +29,12 @@ class AppCoordinator: Coordinator {
 extension AppCoordinator {
     
     func showListOfGenres() {
+        guard let mainVC = self.navigationController.viewControllers.first as? MainViewController,
+            let mainVM = mainVC.viewModel else { return }
+        
         let vc = ListViewController.instantiate(from: .main)
         vc.coordinator = self
-        vc.viewModel = ListViewModel()
+        vc.viewModel = ListViewModel(allGenres: mainVM.allGenres)
         vc.title = "All genres"
         navigationController.pushViewController(vc, animated: true)
     }

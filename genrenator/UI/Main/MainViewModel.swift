@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class MainViewModel: ViewModelType {
     
@@ -20,6 +21,13 @@ class MainViewModel: ViewModelType {
         let randomGenreText: Driver<String>
     }
     
+    var allGenres: Observable<[SectionModel<String, Genre>]> {
+        return allGenresSubject.asObservable()
+    }
+    
+    private let allGenresSubject = ReplaySubject<[SectionModel<String, Genre>]>.create(bufferSize: 5)
+    private let disposeBag = DisposeBag()
+    
     func transform(input: Input) -> Output {
         let randomGenreText = input.newButtonPressed
             .map { URL(string: "https://binaryjazz.us/wp-json/genrenator/v1/genre/")! }
@@ -30,10 +38,18 @@ class MainViewModel: ViewModelType {
             }
             .map { String(data: $0, encoding: .utf8) ?? "" }
             .map { String($0.dropFirst().dropLast()) }
+        
+        randomGenreText
+            .map( { SectionModel<String, Genre>(model: "", items: [Genre(name: $0)]) } )
+            .scan(into: [SectionModel<String, Genre>](), accumulator: { $0.append($1) })
+            .bind(to: allGenresSubject)
+            .disposed(by: disposeBag)
+        
+        let driver = randomGenreText
             .startWith("")
             .asDriver(onErrorRecover: { _ in fatalError() })
         
-        return Output(randomGenreText: randomGenreText)
+        return Output(randomGenreText: driver)
     }
     
     init() {
