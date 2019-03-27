@@ -8,12 +8,9 @@
 
 import UIKit
 
-class Coordinator {
+protocol Coordinator {
+    var childCoordinators: [Coordinator] { get set }
+    var navigationController: UINavigationController { get set }
     
-    var childCoordinators: [Coordinator] = []
-    weak var navigationController: UINavigationController?
-    
-    init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
-    }
+    func start()
 }

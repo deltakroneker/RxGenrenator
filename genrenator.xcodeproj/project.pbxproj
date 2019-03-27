@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D256A207222D709C00299F92 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256A206222D709C00299F92 /* MainViewModel.swift */; };
 		D256A20A222D87DF00299F92 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256A209222D87DF00299F92 /* ViewModelType.swift */; };
+		D283FEAE224B8CD80096EAFA /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283FEAD224B8CD80096EAFA /* Storyboarded.swift */; };
 		D2A472BB222D6AB800934982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A472BA222D6AB800934982 /* AppDelegate.swift */; };
 		D2A472BD222D6AB800934982 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A472BC222D6AB800934982 /* MainViewController.swift */; };
 		D2A472C0222D6AB800934982 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A472BE222D6AB800934982 /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 		D2A472C5222D6AB900934982 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A472C3222D6AB900934982 /* LaunchScreen.storyboard */; };
 		D2A472D0222D6BF100934982 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A472CF222D6BF100934982 /* Coordinator.swift */; };
 		D2A472D2222D6C3400934982 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A472D1222D6C3400934982 /* AppCoordinator.swift */; };
+		D2BC0557224A778B00C96D6F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC0556224A778B00C96D6F /* ListViewController.swift */; };
+		D2BC0559224A786F00C96D6F /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC0558224A786F00C96D6F /* ListViewModel.swift */; };
 		E2CC8DBF5BA22205713275E1 /* Pods_genrenator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754748F7B1B851F24916D8B9 /* Pods_genrenator.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +28,7 @@
 		754748F7B1B851F24916D8B9 /* Pods_genrenator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_genrenator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D256A206222D709C00299F92 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		D256A209222D87DF00299F92 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		D283FEAD224B8CD80096EAFA /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		D2A472B7222D6AB700934982 /* genrenator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = genrenator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A472BA222D6AB800934982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2A472BC222D6AB800934982 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +38,8 @@
 		D2A472C6222D6AB900934982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2A472CF222D6BF100934982 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D2A472D1222D6C3400934982 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D2BC0556224A778B00C96D6F /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		D2BC0558224A786F00C96D6F /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,24 @@
 				2D77DA2026B9FAC9A8C297FB /* Pods-genrenator.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D283FEAB224B8BAF0096EAFA /* List */ = {
+			isa = PBXGroup;
+			children = (
+				D2BC0558224A786F00C96D6F /* ListViewModel.swift */,
+				D2BC0556224A778B00C96D6F /* ListViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		D283FEAC224B8BB90096EAFA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D256A206222D709C00299F92 /* MainViewModel.swift */,
+				D2A472BC222D6AB800934982 /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		D2A472AE222D6AB700934982 = {
@@ -98,8 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				D2A472BE222D6AB800934982 /* Main.storyboard */,
-				D256A206222D709C00299F92 /* MainViewModel.swift */,
-				D2A472BC222D6AB800934982 /* MainViewController.swift */,
+				D283FEAC224B8BB90096EAFA /* Main */,
+				D283FEAB224B8BAF0096EAFA /* List */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -108,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				D2A472CF222D6BF100934982 /* Coordinator.swift */,
+				D283FEAD224B8CD80096EAFA /* Storyboarded.swift */,
 				D2A472D1222D6C3400934982 /* AppCoordinator.swift */,
 			);
 			path = Coordinators;
@@ -158,6 +183,7 @@
 				TargetAttributes = {
 					D2A472B6222D6AB700934982 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -224,16 +250,20 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-genrenator/Pods-genrenator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,7 +283,10 @@
 				D2A472BD222D6AB800934982 /* MainViewController.swift in Sources */,
 				D256A20A222D87DF00299F92 /* ViewModelType.swift in Sources */,
 				D2A472BB222D6AB800934982 /* AppDelegate.swift in Sources */,
+				D283FEAE224B8CD80096EAFA /* Storyboarded.swift in Sources */,
 				D2A472D0222D6BF100934982 /* Coordinator.swift in Sources */,
+				D2BC0559224A786F00C96D6F /* ListViewModel.swift in Sources */,
+				D2BC0557224A778B00C96D6F /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +442,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolamilic.genrenator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -428,7 +461,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolamilic.genrenator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -8,13 +8,31 @@
 
 import UIKit
 
-final class AppCoordinator: Coordinator {
+class AppCoordinator: Coordinator {
+    
+    var childCoordinators = [Coordinator]()
+    var navigationController: UINavigationController
+    
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
     
     func start() {
-        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        guard let viewController = storyboard.instantiateInitialViewController() as? MainViewController else { return }
-        viewController.viewModel = MainViewModel()
-        viewController.title = "Genrenator"
-        navigationController?.pushViewController(viewController, animated: false)
+        let vc = MainViewController.instantiate(from: .main)
+        vc.coordinator = self
+        vc.viewModel = MainViewModel()
+        vc.title = "Genrenator"
+        navigationController.pushViewController(vc, animated: false)
+    }
+}
+
+extension AppCoordinator {
+    
+    func showListOfGenres() {
+        let vc = ListViewController.instantiate(from: .main)
+        vc.coordinator = self
+        vc.viewModel = ListViewModel()
+        vc.title = "All genres"
+        navigationController.pushViewController(vc, animated: true)
     }
 }

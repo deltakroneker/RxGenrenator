@@ -10,17 +10,20 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, Storyboarded {
 
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var newButton: UIButton!
     
+    weak var coordinator: AppCoordinator?
     var viewModel: MainViewModel!
     let bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "All", style: .plain,
+                                                                                  target: self, action: #selector(allTapped))
     }
     
     func setupBindings() {
@@ -31,6 +34,8 @@ class MainViewController: UIViewController {
             .drive(genreLabel.rx.text)
             .disposed(by: bag)
     }
-
+    
+    @objc func allTapped() {
+        coordinator?.showListOfGenres()
+    }
 }
-
