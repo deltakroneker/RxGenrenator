@@ -22,10 +22,10 @@ class MainViewModel: ViewModelType {
     }
     
     var allGenres: Observable<[SectionModel<String, Genre>]> {
-        return allGenresSubject.asObservable()
+        return _allGenres.asObservable()
     }
     
-    private let allGenresSubject = ReplaySubject<[SectionModel<String, Genre>]>.create(bufferSize: 5)
+    private let _allGenres = BehaviorSubject<[SectionModel<String, Genre>]>(value: [])
     private let disposeBag = DisposeBag()
     
     func transform(input: Input) -> Output {
@@ -38,11 +38,12 @@ class MainViewModel: ViewModelType {
             }
             .map { String(data: $0, encoding: .utf8) ?? "" }
             .map { String($0.dropFirst().dropLast()) }
+            .share()
         
         randomGenreText
             .map( { SectionModel<String, Genre>(model: "", items: [Genre(name: $0)]) } )
             .scan(into: [SectionModel<String, Genre>](), accumulator: { $0.append($1) })
-            .bind(to: allGenresSubject)
+            .bind(to: _allGenres)
             .disposed(by: disposeBag)
         
         let driver = randomGenreText
