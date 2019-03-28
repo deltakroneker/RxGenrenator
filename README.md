@@ -4,7 +4,5 @@ Genre generator made with RxSwift.
 
 ## Preview
 
-![Genrenator screen](image1.PNG)
-![List screen](image2.PNG)
-
+<img src="image1.PNG" width="300"> <img src="image2.PNG" width="300">
 
