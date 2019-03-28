@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        let navigationBarFont = UIFont(name: "HelveticaNeue-Medium", size: 20.0)!
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: navigationBarFont], for: .normal)
+        
         let navController = UINavigationController()
         coordinator = AppCoordinator(navigationController: navController)
         coordinator?.start()

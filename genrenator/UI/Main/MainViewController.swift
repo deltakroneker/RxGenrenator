@@ -22,8 +22,7 @@ class MainViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "All", style: .plain,
-                                                                                  target: self, action: #selector(allTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "All genres", style: .plain, target: self, action: #selector(allTapped))
     }
     
     func setupBindings() {

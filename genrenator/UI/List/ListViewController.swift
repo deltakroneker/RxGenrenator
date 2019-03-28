@@ -24,13 +24,14 @@ class ListViewController: UIViewController, Storyboarded {
     let bag = DisposeBag()
     
     let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Genre>>(configureCell: { (dataSource, table, indexPath, genre) -> UITableViewCell in
-        let cell = table.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = genre.name
+        let cell = table.dequeueReusableCell(withIdentifier: "GenreCell", for: indexPath) as! GenreCell
+        cell.titleLabel.text = genre.name
         return cell
     })
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
         setupBindings()
     }
     
@@ -38,5 +39,12 @@ class ListViewController: UIViewController, Storyboarded {
         viewModel.allGenres
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: bag)
+    }
+}
+
+extension ListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }
