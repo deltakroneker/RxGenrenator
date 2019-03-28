@@ -1,16 +1,10 @@
-# Project Title
+# RxGenrenator
 
-One Paragraph of project description goes here
+Genre generator made with RxSwift.
 
-## Getting Started
+## Preview
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-![Genrenator screen](image1.png)
-![List screen](image2.png)
+![Genrenator screen](image1.PNG)
+![List screen](image2.PNG)
 
 
