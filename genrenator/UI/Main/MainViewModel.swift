@@ -41,8 +41,9 @@ class MainViewModel: ViewModelType {
             .share()
         
         randomGenreText
-            .map( { SectionModel<String, Genre>(model: "", items: [Genre(name: $0)]) } )
-            .scan(into: [SectionModel<String, Genre>](), accumulator: { $0.append($1) })
+            .map { Genre(name: $0) }
+            .scan(into: [Genre](), accumulator: { $0.append($1) })
+            .map { [SectionModel<String, Genre>(model: "", items: $0)] }
             .bind(to: _allGenres)
             .disposed(by: disposeBag)
         
